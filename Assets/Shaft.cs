@@ -10,7 +10,7 @@ public class Shaft : MonoBehaviour
 
     [Header("Stats")]
     public int metersDug;
-    public float wallDurability, mineProgress, DurabilityGain, bonusDrop;
+    public float digPower, wallDurability, mineProgress, DurabilityGain, bonusDrop;
 
     [Header("Drops")]
     int dropsAmount;
@@ -27,9 +27,15 @@ public class Shaft : MonoBehaviour
         Invoke("AutoDig", 0.7f);
     }
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+            Dig(digPower / 8f);
+    }
+
     void AutoDig()
     {
-        Dig(3.418f);
+        Dig(digPower);
         Invoke("AutoDig", 0.7f);
     }
 
