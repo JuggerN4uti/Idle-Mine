@@ -10,7 +10,12 @@ public class Shaft : MonoBehaviour
 
     [Header("Stats")]
     public int metersDug;
-    public float digPower, wallDurability, mineProgress, DurabilityGain, bonusDrop;
+    public float digPower, idlePower, wallDurability, mineProgress, DurabilityGain, bonusDrop;
+
+    [Header("Power Dig")]
+    public int powerDigs;
+    public int maxPowerDigs;
+    public float powerDigPower;
 
     [Header("Drops")]
     int dropsAmount;
@@ -24,19 +29,35 @@ public class Shaft : MonoBehaviour
 
     void Start()
     {
-        Invoke("AutoDig", 0.7f);
+        Invoke("AutoDig", 0.5f);
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-            Dig(digPower / 8f);
+        {
+            if (powerDigs > 0)
+            {
+                Dig(digPower * powerDigPower);
+                if (powerDigs == maxPowerDigs)
+                    Invoke("GatherPower", 12f);
+                powerDigs--;
+            }
+            else Dig(digPower);
+        }
+    }
+
+    void GatherPower()
+    {
+        powerDigs++;
+        if (powerDigs < maxPowerDigs)
+            Invoke("GatherPower", 12f);
     }
 
     void AutoDig()
     {
-        Dig(digPower);
-        Invoke("AutoDig", 0.7f);
+        Dig(digPower * idlePower);
+        Invoke("AutoDig", 0.5f);
     }
 
     public void Dig(float amount)
@@ -65,7 +86,7 @@ public class Shaft : MonoBehaviour
         bonusDrop += mineProgress - wallDurability;
         mineProgress = 0;
         wallDurability += DurabilityGain;
-        DurabilityGain += (metersDug + 14) / 19;
+        DurabilityGain += (metersDug + 14) / 22;
     }
 
     void ResourcesDrop()
