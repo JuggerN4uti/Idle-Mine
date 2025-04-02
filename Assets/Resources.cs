@@ -59,13 +59,13 @@ public class Resources : MonoBehaviour
         else BuyEggButton[1].interactable = false;
     }
 
-    public void BugWoodEgg()
+    public void BuyWoodEgg()
     {
         SpendGold(100);
         MinersScript.GetRandomWood();
     }
 
-    public void BugStoneEgg()
+    public void BuyStoneEgg()
     {
         SpendGold(450);
         MinersScript.GetRandomStone();

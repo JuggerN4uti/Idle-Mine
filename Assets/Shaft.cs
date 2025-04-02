@@ -7,6 +7,7 @@ public class Shaft : MonoBehaviour
 {
     [Header("Scripts")]
     public Resources ResourcesScript;
+    public Miners MinersScript;
 
     [Header("Stats")]
     public int metersDug;
@@ -16,6 +17,10 @@ public class Shaft : MonoBehaviour
     public int powerDigs;
     public int maxPowerDigs;
     public float powerDigPower;
+    public TMPro.TextMeshProUGUI PowerDigsText;
+
+    [Header("Levels")]
+    public int level;
 
     [Header("Drops")]
     int dropsAmount;
@@ -42,6 +47,7 @@ public class Shaft : MonoBehaviour
                 if (powerDigs == maxPowerDigs)
                     Invoke("GatherPower", 12f);
                 powerDigs--;
+                PowerDigsText.text = powerDigs.ToString("");
             }
             else Dig(digPower);
         }
@@ -50,13 +56,15 @@ public class Shaft : MonoBehaviour
     void GatherPower()
     {
         powerDigs++;
+        PowerDigsText.text = powerDigs.ToString("");
         if (powerDigs < maxPowerDigs)
             Invoke("GatherPower", 12f);
     }
 
     void AutoDig()
     {
-        Dig(digPower * idlePower);
+        //Dig(digPower * idlePower);
+        Dig(idlePower);
         Invoke("AutoDig", 0.5f);
     }
 
@@ -80,6 +88,8 @@ public class Shaft : MonoBehaviour
 
         metersDug++;
         MineshaftForm.sizeDelta = new Vector2(75, metersDug * 5);
+        if (metersDug % 25 == 0)
+            UnlockLevel();
 
         DropsChanges();
 
@@ -87,6 +97,16 @@ public class Shaft : MonoBehaviour
         mineProgress = 0;
         wallDurability += DurabilityGain;
         DurabilityGain += (metersDug + 14) / 22;
+    }
+
+    void UnlockLevel()
+    {
+        switch (level)
+        {
+            case 0:
+                break;
+        }
+        level++;
     }
 
     void ResourcesDrop()
