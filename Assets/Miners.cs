@@ -12,8 +12,9 @@ public class Miners : MonoBehaviour
 
     [Header("Miners")]
     public int[] MinersInBase;
-    public int[] MinersEquipped;
+    public int[] MinersEquipped, MinersLocation;
     public bool[] SlotTaken;
+    public TMPro.TextMeshProUGUI[] MinersLocationText;
     public int MinersMaxSlots, SlotsTaken;
     public Image[] EquippedMinerSprite;
     public Button[] EquippedMinerButton;
@@ -33,6 +34,25 @@ public class Miners : MonoBehaviour
         {
             GetRandomWood();
         }
+        Invoke("AutoDig", 0.5f);
+    }
+
+    void AutoDig()
+    {
+        for (int i = 0; i < MinersEquipped.Length; i++)
+        {
+            if (SlotTaken[i])
+                Dig(i);
+        }
+        Invoke("AutoDig", 0.5f);
+    }
+
+    void Dig(int miner)
+    {
+        if (MinersLocation[miner] == 0)
+            ShaftScript.Dig(MLib.Miners[MinersEquipped[miner]].digPower);
+        else
+            ShaftScript.DigLevel(MLib.Miners[MinersEquipped[miner]].digPower, MinersLocation[miner] - 1);
     }
 
     public void GetRandomWood()
@@ -90,11 +110,13 @@ public class Miners : MonoBehaviour
         MinersInBase[BaseMinerID[slot]]--;
         int openSlot = ChoseSlot();
         MinersEquipped[openSlot] = BaseMinerID[slot];
+        MinersLocation[openSlot] = 0;
+        MinersLocationText[openSlot].text = "0";
         EquippedMinerSprite[openSlot].sprite = MLib.Miners[BaseMinerID[slot]].MinerSprite;
         EquippedMinerButton[openSlot].interactable = true;
         SlotTaken[openSlot] = true;
         SlotsTaken++;
-        ShaftScript.idlePower += MLib.Miners[BaseMinerID[slot]].digPower;
+        //ShaftScript.idlePower += MLib.Miners[BaseMinerID[slot]].digPower;
         DisplayBase();
     }
 
@@ -112,6 +134,13 @@ public class Miners : MonoBehaviour
     {
         if (MinersHUD.activeSelf)
             UnequipMiner(slot);
+        else if (ShaftScript.level > 0)
+        {
+            MinersLocation[slot]++;
+            if (MinersLocation[slot] > ShaftScript.level)
+                MinersLocation[slot] = 0;
+            MinersLocationText[slot].text = MinersLocation[slot].ToString("");
+        }
     }
 
     void UnequipMiner(int slot)
@@ -121,7 +150,8 @@ public class Miners : MonoBehaviour
         EquippedMinerButton[slot].interactable = false;
         SlotTaken[slot] = false;
         SlotsTaken--;
-        ShaftScript.idlePower -= MLib.Miners[MinersEquipped[slot]].digPower;
+        MinersLocationText[slot].text = "";
+        //ShaftScript.idlePower -= MLib.Miners[MinersEquipped[slot]].digPower;
         DisplayBase();
     }
 }

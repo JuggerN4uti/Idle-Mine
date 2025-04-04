@@ -21,6 +21,9 @@ public class Shaft : MonoBehaviour
 
     [Header("Levels")]
     public int level;
+    public GameObject[] LevelObject;
+    public float[] levelProgress, levelDurability;
+    public Image[] LevelProgressBar;
 
     [Header("Drops")]
     int dropsAmount;
@@ -34,7 +37,7 @@ public class Shaft : MonoBehaviour
 
     void Start()
     {
-        Invoke("AutoDig", 0.5f);
+        //Invoke("AutoDig", 0.5f);
     }
 
     void Update()
@@ -82,6 +85,18 @@ public class Shaft : MonoBehaviour
         ProgressBar.fillAmount = mineProgress / wallDurability;
     }
 
+    public void DigLevel(float amount, int level)
+    {
+        levelProgress[level] += amount;
+        if (levelProgress[level] >= levelDurability[level])
+        {
+            OreDug(level);
+            levelProgress[level] -= levelDurability[level];
+            levelDurability[level] += level * 1f + 1f;
+        }
+        LevelProgressBar[level].fillAmount = levelProgress[level] / levelDurability[level];
+    }
+
     void WallDug()
     {
         ResourcesDrop();
@@ -99,8 +114,18 @@ public class Shaft : MonoBehaviour
         DurabilityGain += (metersDug + 14) / 22;
     }
 
+    void OreDug(int level)
+    {
+        dropsAmount = Random.Range(3, 5 + level);
+        for (int i = 0; i < dropsAmount; i++)
+        {
+            ResourcesScript.GainResource(OreDrop(level));
+        }
+    }
+
     void UnlockLevel()
     {
+        LevelObject[level].SetActive(true);
         switch (level)
         {
             case 0:
@@ -127,6 +152,17 @@ public class Shaft : MonoBehaviour
         {
             roll -= dropsWeigths[id];
             id++;
+        }
+        return id;
+    }
+
+    int OreDrop(int level)
+    {
+        id = level;
+        for (int i = 0; i < 3 + level; i++)
+        {
+            if (Random.Range(0f, 100f + level * 1f) >= 60f)
+                id++;
         }
         return id;
     }
