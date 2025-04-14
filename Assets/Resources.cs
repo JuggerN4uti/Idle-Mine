@@ -19,9 +19,9 @@ public class Resources : MonoBehaviour
         GainGold(0);
     }
 
-    public void GainResource(int id)
+    public void GainResource(int id, int amount = 1)
     {
-        resource[id]++;
+        resource[id] += amount;
         Text[id].text = resource[id].ToString("");
     }
 
@@ -32,7 +32,7 @@ public class Resources : MonoBehaviour
         Text[id].text = resource[id].ToString("");
     }
 
-    void GainGold(int amount)
+    public void GainGold(int amount)
     {
         gold += amount;
         GoldText.text = gold.ToString("");

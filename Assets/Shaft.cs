@@ -8,9 +8,11 @@ public class Shaft : MonoBehaviour
     [Header("Scripts")]
     public Resources ResourcesScript;
     public Miners MinersScript;
+    public Layer[] LayersScript;
 
     [Header("Stats")]
     public int metersDug;
+    public int currentLayer;
     public float digPower, idlePower, wallDurability, mineProgress, DurabilityGain, bonusDrop;
 
     [Header("Power Dig")]
@@ -73,7 +75,9 @@ public class Shaft : MonoBehaviour
 
     public void Dig(float amount)
     {
-        mineProgress += amount;
+        LayersScript[currentLayer].Dig(amount);
+
+        /*mineProgress += amount;
         bonusDrop += amount;
         if (bonusDrop >= 100f + wallDurability * 0.1f)
         {
@@ -82,7 +86,7 @@ public class Shaft : MonoBehaviour
         }
         if (mineProgress >= wallDurability)
             WallDug();
-        ProgressBar.fillAmount = mineProgress / wallDurability;
+        ProgressBar.fillAmount = mineProgress / wallDurability;*/
     }
 
     public void DigLevel(float amount, int level)
