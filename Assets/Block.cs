@@ -25,10 +25,10 @@ public class Block : MonoBehaviour
 
     void Drops()
     {
-        ItsLayer.ResourcesScript.GainGold(Random.Range(goldMin, goldMax));
+        ItsLayer.ResourcesScript.GainGold(Random.Range(goldMin, goldMax + 1));
         for (int i = 0; i < dropsList; i++)
         {
-            ItsLayer.ResourcesScript.GainResource(resourceID[i], Random.Range(dropMin[i], dropMin[i]));
+            ItsLayer.ResourcesScript.GainResource(resourceID[i], Random.Range(dropMin[i], dropMin[i] + 1));
         }
     }
 }
