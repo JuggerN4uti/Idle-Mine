@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4768185902943065722
+--- !u!1001 &8260084142737505945
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,19 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Color.b
-      value: 0.4716981
+      value: 0.18867922
       objectReference: {fileID: 0}
     - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Color.g
-      value: 0.3537736
+      value: 0.18867922
       objectReference: {fileID: 0}
     - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Color.r
-      value: 0.36164236
-      objectReference: {fileID: 0}
-    - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
-      propertyPath: m_DrawMode
-      value: 0
+      value: 0.18867922
       objectReference: {fileID: 0}
     - target: {fileID: 3319178654285608805, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,15 +62,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: goldMax
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: goldMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropsList
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: toughness
-      value: 12
+      value: 37.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropMax.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropMin.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropMax.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropMin.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: resourceID.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4398564332538575032, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Name
-      value: Dirt Block
+      value: Stone Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
