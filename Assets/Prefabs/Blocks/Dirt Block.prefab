@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: toughness
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4398564332538575032, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Name

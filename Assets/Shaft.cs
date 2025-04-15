@@ -18,7 +18,7 @@ public class Shaft : MonoBehaviour
     [Header("Power Dig")]
     public int powerDigs;
     public int maxPowerDigs;
-    public float powerDigPower;
+    public float powerDigPower, powerDigCooldown;
     public TMPro.TextMeshProUGUI PowerDigsText;
 
     [Header("Levels")]
@@ -50,7 +50,7 @@ public class Shaft : MonoBehaviour
             {
                 Dig(digPower * powerDigPower);
                 if (powerDigs == maxPowerDigs)
-                    Invoke("GatherPower", 12f);
+                    Invoke("GatherPower", powerDigCooldown);
                 powerDigs--;
                 PowerDigsText.text = powerDigs.ToString("");
             }
@@ -63,7 +63,7 @@ public class Shaft : MonoBehaviour
         powerDigs++;
         PowerDigsText.text = powerDigs.ToString("");
         if (powerDigs < maxPowerDigs)
-            Invoke("GatherPower", 12f);
+            Invoke("GatherPower", powerDigCooldown);
     }
 
     void AutoDig()
