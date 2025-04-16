@@ -97,3 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b962bc4a6e1423848a834a7036df1f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItsSprite: {fileID: 1231298816378595037}
+  StateSprites: []
+  ItsLayer: {fileID: 0}
+  toughness: 0
+  dropsList: 0
+  goldMin: 0
+  goldMax: 0
+  resourceID: 
+  dropMin: 
+  dropMax: 

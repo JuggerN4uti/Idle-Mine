@@ -9,16 +9,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5998104687724245159, guid: ec780e647ec213c4588fc72909fff414, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 841d4813750a52d4db5bda00a7db97c5, type: 3}
+    - target: {fileID: 5998104687724245159, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: m_Color.b
-      value: 0.2735849
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5998104687724245159, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: m_Color.g
-      value: 0.25680846
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5998104687724245159, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: m_Color.r
-      value: 0.2579269
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7799083051009630495, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: m_LocalPosition.x
@@ -96,6 +100,18 @@ PrefabInstance:
       propertyPath: resourceID.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
+      propertyPath: StateSprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
+      propertyPath: StateSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 841d4813750a52d4db5bda00a7db97c5, type: 3}
+    - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
+      propertyPath: StateSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 841d4813750a52d4db5bda00a7db97c5, type: 3}
     - target: {fileID: 9160648353344155330, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: m_Name
       value: Coarse Dirt Block

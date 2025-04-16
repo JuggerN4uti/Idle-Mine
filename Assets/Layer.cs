@@ -7,7 +7,13 @@ public class Layer : MonoBehaviour
     public Shaft ShaftScipt;
     public Resources ResourcesScript;
     public Block[] BlockInLayer;
+    public int[] BlockID;
     public int currentTarget;
+
+    void Start()
+    {
+        SetBlocks();
+    }
 
     public void Dig(float amount)
     {
@@ -21,6 +27,14 @@ public class Layer : MonoBehaviour
         {
             ShaftScipt.currentLayer++;
             Destroy(gameObject);
+        }
+    }
+
+    void SetBlocks()
+    {
+        for (int i = 0; i < BlockInLayer.Length; i++)
+        {
+            BlockInLayer[i].SetBlock(BlockID[i]);
         }
     }
 }
