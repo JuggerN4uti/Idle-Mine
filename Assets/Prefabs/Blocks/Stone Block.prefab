@@ -9,16 +9,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a11653ac1abfc0468a68cef353a2179, type: 3}
+    - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Color.b
-      value: 0.18867922
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Color.g
-      value: 0.18867922
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Color.r
-      value: 0.18867922
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3319178654285608805, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_LocalPosition.x
@@ -103,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: StateSprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: d61a2b18857c25f40ab5617ec56fff1e, type: 3}
+      objectReference: {fileID: 21300000, guid: 7a11653ac1abfc0468a68cef353a2179, type: 3}
     - target: {fileID: 4398564332538575032, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Name
       value: Stone Block
