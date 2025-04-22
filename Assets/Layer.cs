@@ -26,6 +26,7 @@ public class Layer : MonoBehaviour
         if (currentTarget >= 36)
         {
             ShaftScipt.currentLayer++;
+            ShaftScipt.CameraScript.yLimits[1] -= 0.5f;
             Destroy(gameObject);
         }
     }

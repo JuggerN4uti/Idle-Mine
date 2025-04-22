@@ -9,6 +9,7 @@ public class Shaft : MonoBehaviour
     public Resources ResourcesScript;
     public Miners MinersScript;
     public Layer[] LayersScript;
+    public CameraControl CameraScript;
 
     [Header("Stats")]
     public int metersDug;
