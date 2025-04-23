@@ -32,7 +32,7 @@ public class MinersLibrary : MonoBehaviour
         return GoldMinersID[roll];
     }
 
-    public int RollLegendaryMiner()
+    public int RollDiamondMiner()
     {
         roll = Random.Range(0, DiamondMinersID.Length);
         return DiamondMinersID[roll];

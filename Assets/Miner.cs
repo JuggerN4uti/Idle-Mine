@@ -6,4 +6,5 @@ public class Miner : MonoBehaviour
 {
     public Sprite MinerSprite;
     public float digPower;
+    public int tier;
 }

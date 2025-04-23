@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 20412f941aa1e824db61202856f6f5ae, type: 3}
-  digPower: 10
+  digPower: 5.6
+  tier: 1
 --- !u!1 &618860524966394839
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: b625d5e2ddafae148b641fde973eceeb, type: 3}
-  digPower: 5
+  digPower: 3
+  tier: 0
 --- !u!1 &836667772024957685
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: c94ae73b150f41d41b6dbd1649d83f41, type: 3}
-  digPower: 17
+  digPower: 10.1
+  tier: 2
 --- !u!1 &1021163734242471822
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 44ea23559f934404187e355f3d05211c, type: 3}
-  digPower: 5
+  digPower: 3
+  tier: 0
 --- !u!1 &1022963876875820876
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: c315ed6d32339194fb6b9d1ad1e3ac46, type: 3}
-  digPower: 31
+  digPower: 17.9
+  tier: 3
 --- !u!1 &1536716754525571017
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: f0917d2b62ac08c4b984d59ffb5247ee, type: 3}
-  digPower: 5
+  digPower: 3
+  tier: 0
 --- !u!1 &1986137189488695770
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 52a2d18434e53fb42917308e9737d187, type: 3}
-  digPower: 17
+  digPower: 10.1
+  tier: 2
 --- !u!1 &1988946209516336145
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 665f9a453b7c4234fa1c95bb4e1339eb, type: 3}
-  digPower: 5
+  digPower: 3
+  tier: 0
 --- !u!1 &3120406691200448029
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 8b31904b74320b94ba5ea7283019950c, type: 3}
-  digPower: 10
+  digPower: 5.6
+  tier: 1
 --- !u!1 &3346793607564839982
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +574,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: cc8f4bb77f72765438a16f1fbc3a226f, type: 3}
-  digPower: 10
+  digPower: 5.6
+  tier: 1
 --- !u!1 &4035529311903923088
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +621,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: f585fdcfcff961246942dc9cb37382bb, type: 3}
-  digPower: 31
+  digPower: 17.9
+  tier: 3
 --- !u!1 &4799669985439788722
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: e1527682faf48cf4784dc95f129900fd, type: 3}
-  digPower: 54
+  digPower: 31.1
+  tier: 4
 --- !u!1 &4908550011126104975
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: c320dd2eaefd1fa47b27e5674f4b3671, type: 3}
-  digPower: 17
+  digPower: 10.1
+  tier: 2
 --- !u!1 &5291055492157140810
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +762,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: bfb7c04a4a58f05448ccee38ad7990c6, type: 3}
-  digPower: 17
+  digPower: 10.1
+  tier: 2
 --- !u!1 &5512877704968938657
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +845,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: ebd87615a5caf534eb10af63658f45ff, type: 3}
-  digPower: 10
+  digPower: 5.6
+  tier: 1
 --- !u!1 &5945753547694751307
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +892,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: b258b0ba8acd6c54096f69a7c579ccb7, type: 3}
-  digPower: 10
+  digPower: 5.6
+  tier: 1
 --- !u!1 &5988005801048164610
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +939,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 5d2a5f2b099d2e84aa5df93f7e6dedf2, type: 3}
-  digPower: 54
+  digPower: 31.1
+  tier: 4
 --- !u!1 &6645065936689778819
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +986,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: f0c0d0ab83aafc44ca7d9913f63ad041, type: 3}
-  digPower: 31
+  digPower: 17.9
+  tier: 3
 --- !u!1 &6810370748955321785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 902648ddb1775dc4fbf1e5e95ad89d62, type: 3}
-  digPower: 31
+  digPower: 17.9
+  tier: 3
 --- !u!1 &7138044465345234612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: bc3aa47f7431d76418a8158ad30bd9d4, type: 3}
-  digPower: 54
+  digPower: 31.1
+  tier: 4
 --- !u!1 &7362691707305026300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 9765d1b8b836fff47b4e04edc4725861, type: 3}
-  digPower: 54
+  digPower: 31.1
+  tier: 4
 --- !u!1 &8031413790603750840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,7 +1246,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 88e888487dde5574d870961b8645ee36, type: 3}
-  digPower: 17
+  digPower: 10.1
+  tier: 2
 --- !u!1 &8301284711468180087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,7 +1329,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 7c4115bbcb365b24bae583e962653e3e, type: 3}
-  digPower: 54
+  digPower: 31.1
+  tier: 4
 --- !u!1 &9095870485872891977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1376,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: 4d56790eadce0a5468e61c1e925081f8, type: 3}
-  digPower: 31
+  digPower: 17.9
+  tier: 3
 --- !u!1 &9134866650220174451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,4 +1423,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinerSprite: {fileID: 21300000, guid: c14eb488d5446044daf8c5de6d903eb5, type: 3}
-  digPower: 5
+  digPower: 3
+  tier: 0

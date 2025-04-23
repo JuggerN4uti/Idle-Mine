@@ -20,6 +20,12 @@ public class Miners : MonoBehaviour
     public Button[] EquippedMinerButton;
     public Sprite Chegg;
 
+    [Header("Crafting")]
+    public bool maceSelected;
+    public Image MaceSprite;
+    public int[] CraftCharges;
+    public Image[] CraftProgress;
+
     [Header("Base HUD")]
     public GameObject MinersHUD;
     public GameObject[] BaseMinerObject;
@@ -69,7 +75,7 @@ public class Miners : MonoBehaviour
                 {
                     if (LuckCheck(0f))
                     {
-                        MinersInBase[MLib.RollLegendaryMiner()]++;
+                        MinersInBase[MLib.RollDiamondMiner()]++;
                     }
                     else MinersInBase[MLib.RollGoldMiner()]++;
                 }
@@ -93,7 +99,10 @@ public class Miners : MonoBehaviour
     public void OpenCloseMinersHUD()
     {
         if (MinersHUD.activeSelf)
+        {
             MinersHUD.SetActive(false);
+            //maceSelected = false;
+        }
         else
         {
             DisplayBase();
@@ -119,7 +128,7 @@ public class Miners : MonoBehaviour
         }
         for (int i = 0; i < currentPlace; i++)
         {
-            if (SlotsTaken < MinersMaxSlots)
+            if (SlotsTaken < MinersMaxSlots || maceSelected)
                 BaseMinerButton[i].interactable = true;
             else BaseMinerButton[i].interactable = false;
         }
@@ -130,19 +139,68 @@ public class Miners : MonoBehaviour
         }
     }
 
+    public void SelectMace()
+    {
+        if (maceSelected)
+        {
+            maceSelected = false;
+            MaceSprite.color = new Color(1f, 1f, 1f, 1f);
+        }
+        else
+        {
+            maceSelected = true;
+            MaceSprite.color = new Color(0.8f, 0f, 0f, 1f);
+        }
+        DisplayBase();
+    }
+
     public void EquipMiner(int slot)
     {
-        MinersInBase[BaseMinerID[slot]]--;
-        int openSlot = ChoseSlot();
-        MinersEquipped[openSlot] = BaseMinerID[slot];
-        MinersLocation[openSlot] = 0;
-        MinersLocationText[openSlot].text = "0";
-        EquippedMinerSprite[openSlot].sprite = MLib.Miners[BaseMinerID[slot]].MinerSprite;
-        EquippedMinerButton[openSlot].interactable = true;
-        SlotTaken[openSlot] = true;
-        SlotsTaken++;
-        //ShaftScript.idlePower += MLib.Miners[BaseMinerID[slot]].digPower;
+        if (maceSelected)
+        {
+            if (MLib.Miners[BaseMinerID[slot]].tier < 4)
+            {
+                MinersInBase[BaseMinerID[slot]]--;
+                CraftCharges[MLib.Miners[BaseMinerID[slot]].tier]++;
+                if (CraftCharges[MLib.Miners[BaseMinerID[slot]].tier] >= 6)
+                    CraftNewMiner(MLib.Miners[BaseMinerID[slot]].tier);
+                CraftProgress[MLib.Miners[BaseMinerID[slot]].tier].fillAmount = CraftCharges[MLib.Miners[BaseMinerID[slot]].tier] * 0.175f;
+            }
+        }
+        else
+        {
+            MinersInBase[BaseMinerID[slot]]--;
+            int openSlot = ChoseSlot();
+            MinersEquipped[openSlot] = BaseMinerID[slot];
+            MinersLocation[openSlot] = 0;
+            MinersLocationText[openSlot].text = "0";
+            EquippedMinerSprite[openSlot].sprite = MLib.Miners[BaseMinerID[slot]].MinerSprite;
+            EquippedMinerButton[openSlot].interactable = true;
+            SlotTaken[openSlot] = true;
+            SlotsTaken++;
+            //ShaftScript.idlePower += MLib.Miners[BaseMinerID[slot]].digPower;
+        }
         DisplayBase();
+    }
+
+    void CraftNewMiner(int tier)
+    {
+        CraftCharges[tier] -= 6;
+        switch (tier)
+        {
+            case 0:
+                MinersInBase[MLib.RollStoneMiner()]++;
+                break;
+            case 1:
+                MinersInBase[MLib.RollIronMiner()]++;
+                break;
+            case 2:
+                MinersInBase[MLib.RollGoldMiner()]++;
+                break;
+            case 3:
+                MinersInBase[MLib.RollDiamondMiner()]++;
+                break;
+        }
     }
 
     int ChoseSlot()

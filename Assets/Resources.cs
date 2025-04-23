@@ -18,7 +18,7 @@ public class Resources : MonoBehaviour
     void Start()
     {
         GainGold(0);
-        Invoke("Pity", 1f);
+        Invoke("Pity", 0.7f);
     }
 
     public void GainResource(int id, int amount = 1)
@@ -105,12 +105,12 @@ public class Resources : MonoBehaviour
             GainEgg();
             pityChance = 0f;
         }
-        else pityChance += chance * 0.07f;
+        else pityChance += chance * 0.1f;
     }
 
     void Pity()
     {
         pityChance += 0.07f;
-        Invoke("Pity", 1f);
+        Invoke("Pity", 0.7f);
     }
 }

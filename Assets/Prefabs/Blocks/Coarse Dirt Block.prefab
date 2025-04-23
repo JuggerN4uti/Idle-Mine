@@ -78,11 +78,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: eggChance
-      value: 0.8
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: toughness
-      value: 32
+      value: 28.9
       objectReference: {fileID: 0}
     - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: dropMax.Array.size

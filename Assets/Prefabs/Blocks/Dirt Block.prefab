@@ -78,11 +78,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: eggChance
-      value: 0.7
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: toughness
-      value: 14.7
+      value: 14.4
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: StateSprites.Array.size
