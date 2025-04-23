@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: goldMax
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: goldMin
@@ -77,8 +77,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
+      propertyPath: eggChance
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: toughness
-      value: 28
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: dropMax.Array.size
@@ -94,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: dropMin.Array.data[0]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8831674495961079376, guid: ec780e647ec213c4588fc72909fff414, type: 3}
       propertyPath: resourceID.Array.size

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MinersLibrary : MonoBehaviour
 {
     public Miner[] Miners;
-    public int[] WoodMinersID, StoneMinersID;
+    public int[] WoodMinersID, StoneMinersID, IronMinersID, GoldMinersID, DiamondMinersID;
     int roll;
 
     public int RollWoodMiner()
@@ -18,5 +18,23 @@ public class MinersLibrary : MonoBehaviour
     {
         roll = Random.Range(0, StoneMinersID.Length);
         return StoneMinersID[roll];
+    }
+
+    public int RollIronMiner()
+    {
+        roll = Random.Range(0, IronMinersID.Length);
+        return IronMinersID[roll];
+    }
+
+    public int RollGoldMiner()
+    {
+        roll = Random.Range(0, GoldMinersID.Length);
+        return GoldMinersID[roll];
+    }
+
+    public int RollLegendaryMiner()
+    {
+        roll = Random.Range(0, DiamondMinersID.Length);
+        return DiamondMinersID[roll];
     }
 }

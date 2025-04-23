@@ -8,15 +8,17 @@ public class Resources : MonoBehaviour
     [Header("Scripts")]
     public Miners MinersScript;
 
-    public int gold;
+    public int gold, eggs;
+    public float totalLuck, pityChance;
     public int[] resource, resourcesWorth;
-    public TMPro.TextMeshProUGUI GoldText;
+    public TMPro.TextMeshProUGUI GoldText, EggsText;
     public TMPro.TextMeshProUGUI[] Text;
     public Button[] BuyEggButton;
 
     void Start()
     {
         GainGold(0);
+        Invoke("Pity", 1f);
     }
 
     public void GainResource(int id, int amount = 1)
@@ -48,15 +50,39 @@ public class Resources : MonoBehaviour
         CheckEggs();
     }
 
+    public void GainEgg(int amount = 1)
+    {
+        eggs += amount;
+        EggsText.text = eggs.ToString("");
+
+        CheckEggs();
+    }
+
+    void SpendEgg(int amount = 1)
+    {
+        eggs -= amount;
+        EggsText.text = eggs.ToString("");
+
+        CheckEggs();
+    }
+
     void CheckEggs()
     {
-        if (gold >= 100)
+        if (gold >= 100 || eggs > 0)
             BuyEggButton[0].interactable = true;
         else BuyEggButton[0].interactable = false;
 
-        if (gold >= 450)
+        /*if (gold >= 450)
             BuyEggButton[1].interactable = true;
-        else BuyEggButton[1].interactable = false;
+        else BuyEggButton[1].interactable = false;*/
+    }
+
+    public void BuyEgg()
+    {
+        if (eggs > 0)
+            SpendEgg();
+        else SpendGold(100);
+        MinersScript.OpenEgg();
     }
 
     public void BuyWoodEgg()
@@ -69,5 +95,22 @@ public class Resources : MonoBehaviour
     {
         SpendGold(450);
         MinersScript.GetRandomStone();
+    }
+
+    public void EggDrop(float chance)
+    {
+        totalLuck = chance + pityChance;
+        if (totalLuck >= Random.Range(0f, 250f + totalLuck))
+        {
+            GainEgg();
+            pityChance = 0f;
+        }
+        else pityChance += chance * 0.07f;
+    }
+
+    void Pity()
+    {
+        pityChance += 0.07f;
+        Invoke("Pity", 1f);
     }
 }

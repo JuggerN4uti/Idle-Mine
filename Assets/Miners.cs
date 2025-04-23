@@ -28,12 +28,16 @@ public class Miners : MonoBehaviour
     public int[] BaseMinerID;
     int currentPlace;
 
+    [Header("Luck")]
+    public float luck;
+    float totalLuck;
+
     void Start()
     {
-        for (int i = 0; i < 1; i++)
+        /*for (int i = 0; i < 1; i++)
         {
             GetRandomWood();
-        }
+        }*/
         Invoke("AutoDig", 0.5f);
     }
 
@@ -53,6 +57,27 @@ public class Miners : MonoBehaviour
             ShaftScript.Dig(MLib.Miners[MinersEquipped[miner]].digPower);
         else
             ShaftScript.DigLevel(MLib.Miners[MinersEquipped[miner]].digPower, MinersLocation[miner] - 1);
+    }
+
+    public void OpenEgg()
+    {
+        if (LuckCheck(0f))
+        {
+            if (LuckCheck(0f))
+            {
+                if (LuckCheck(0f))
+                {
+                    if (LuckCheck(0f))
+                    {
+                        MinersInBase[MLib.RollLegendaryMiner()]++;
+                    }
+                    else MinersInBase[MLib.RollGoldMiner()]++;
+                }
+                else MinersInBase[MLib.RollIronMiner()]++;
+            }
+            else MinersInBase[MLib.RollStoneMiner()]++;
+        }
+        else MinersInBase[MLib.RollWoodMiner()]++;
     }
 
     public void GetRandomWood()
@@ -153,5 +178,13 @@ public class Miners : MonoBehaviour
         MinersLocationText[slot].text = "";
         //ShaftScript.idlePower -= MLib.Miners[MinersEquipped[slot]].digPower;
         DisplayBase();
+    }
+
+    bool LuckCheck(float bonusLuck = 0f)
+    {
+        totalLuck = luck + bonusLuck;
+        if (totalLuck >= Random.Range(0f, 100f + totalLuck))
+            return true;
+        else return false;
     }
 }

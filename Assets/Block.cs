@@ -8,7 +8,10 @@ public class Block : MonoBehaviour
     public SpriteRenderer ItsSprite;
     public Sprite[] StateSprites;
     public Layer ItsLayer;
+
+    [Header("stats")]
     public float toughness;
+    public float eggChance;
     public int dropsList, goldMin, goldMax;
     public int[] resourceID, dropMin, dropMax;
 
@@ -29,6 +32,7 @@ public class Block : MonoBehaviour
     void Drops()
     {
         ItsLayer.ResourcesScript.GainGold(Random.Range(goldMin, goldMax + 1));
+        ItsLayer.ResourcesScript.EggDrop(eggChance);
         for (int i = 0; i < dropsList; i++)
         {
             ItsLayer.ResourcesScript.GainResource(resourceID[i], Random.Range(dropMin[i], dropMax[i] + 1));

@@ -57,6 +57,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: goldMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: eggChance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: toughness
       value: 10
       objectReference: {fileID: 0}

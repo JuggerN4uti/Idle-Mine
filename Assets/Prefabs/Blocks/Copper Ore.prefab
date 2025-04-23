@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4768185902943065722
+--- !u!1001 &2758116006960131971
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,23 +11,7 @@ PrefabInstance:
     - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0d038358aba84634985bd900a79b5ef0, type: 3}
-    - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1231298816378595037, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
-      propertyPath: m_DrawMode
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 9d8eb683ab4b012449c96f013956aeeb, type: 3}
     - target: {fileID: 3319178654285608805, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -70,31 +54,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: goldMax
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: goldMin
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropsList
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: eggChance
-      value: 0.7
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: toughness
-      value: 14.7
+      value: 143.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropMax.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropMin.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropMax.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropMax.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropMin.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: dropMin.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: resourceID.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: StateSprites.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
+      propertyPath: resourceID.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088027086052214826, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: StateSprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 0d038358aba84634985bd900a79b5ef0, type: 3}
+      objectReference: {fileID: 21300000, guid: 9d8eb683ab4b012449c96f013956aeeb, type: 3}
     - target: {fileID: 4398564332538575032, guid: 21be18fb41f2c4f49bee8a992019bb37, type: 3}
       propertyPath: m_Name
-      value: Dirt Block
+      value: Copper Ore
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
