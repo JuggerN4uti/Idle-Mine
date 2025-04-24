@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     public Transform CameraTransform;
+    public GameObject GrassTileMap;
     public float[] yLimits;
 
     public void Update()
@@ -20,5 +21,9 @@ public class CameraControl : MonoBehaviour
         if (up)
             CameraTransform.position += new Vector3(0f, 2f * Time.deltaTime, 0f);
         else CameraTransform.position += new Vector3(0f, -2f * Time.deltaTime, 0f);
+
+        if (CameraTransform.position.y >= 0f)
+            GrassTileMap.SetActive(true);
+        else GrassTileMap.SetActive(false);
     }
 }
