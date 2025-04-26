@@ -42,7 +42,7 @@ public class Resources : MonoBehaviour
         CheckEggs();
     }
 
-    void SpendGold(int amount)
+    public void SpendGold(int amount)
     {
         gold -= amount;
         GoldText.text = gold.ToString("");
@@ -68,7 +68,7 @@ public class Resources : MonoBehaviour
 
     void CheckEggs()
     {
-        if (gold >= 100 || eggs > 0)
+        if (gold >= 250 || eggs > 0)
             BuyEggButton[0].interactable = true;
         else BuyEggButton[0].interactable = false;
 
@@ -81,7 +81,7 @@ public class Resources : MonoBehaviour
     {
         if (eggs > 0)
             SpendEgg();
-        else SpendGold(100);
+        else SpendGold(250);
         MinersScript.OpenEgg();
     }
 
@@ -100,7 +100,7 @@ public class Resources : MonoBehaviour
     public void EggDrop(float chance)
     {
         totalLuck = chance + pityChance;
-        if (totalLuck >= Random.Range(0f, 250f + totalLuck))
+        if (totalLuck >= Random.Range(0f, 500f + totalLuck))
         {
             GainEgg();
             pityChance = 0f;

@@ -22,7 +22,7 @@ public class CameraControl : MonoBehaviour
             CameraTransform.position += new Vector3(0f, 2f * Time.deltaTime, 0f);
         else CameraTransform.position += new Vector3(0f, -2f * Time.deltaTime, 0f);
 
-        if (CameraTransform.position.y >= 0f)
+        if (CameraTransform.position.y >= -0.15f)
             GrassTileMap.SetActive(true);
         else GrassTileMap.SetActive(false);
     }

@@ -44,7 +44,7 @@ public class Miners : MonoBehaviour
         {
             GetRandomWood();
         }*/
-        Invoke("AutoDig", 0.5f);
+        Invoke("AutoDig", 0.75f);
     }
 
     void AutoDig()
@@ -52,15 +52,17 @@ public class Miners : MonoBehaviour
         for (int i = 0; i < MinersEquipped.Length; i++)
         {
             if (SlotTaken[i])
-                Dig(i);
+                StartCoroutine(Dig(i, i * 0.075f));
+            //Dig(i);
         }
-        Invoke("AutoDig", 0.5f);
+        Invoke("AutoDig", 0.75f);
     }
 
-    void Dig(int miner)
+    IEnumerator Dig(int miner, float timer)
     {
+        yield return new WaitForSeconds(timer);
         if (MinersLocation[miner] == 0)
-            ShaftScript.Dig(MLib.Miners[MinersEquipped[miner]].digPower);
+            ShaftScript.Dig(MLib.Miners[MinersEquipped[miner]].digPower * 1.55f);
         else
             ShaftScript.DigLevel(MLib.Miners[MinersEquipped[miner]].digPower, MinersLocation[miner] - 1);
     }

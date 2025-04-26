@@ -14,7 +14,7 @@ public class Shaft : MonoBehaviour
     [Header("Stats")]
     public int metersDug;
     public int currentLayer;
-    public float digPower, idlePower, wallDurability, mineProgress, DurabilityGain, bonusDrop;
+    public float digPower, idlePower, wallDurability, digMultiplyer, mineProgress, DurabilityGain, bonusDrop;
 
     [Header("Power Dig")]
     public int powerDigs;
@@ -76,7 +76,7 @@ public class Shaft : MonoBehaviour
 
     public void Dig(float amount)
     {
-        LayersScript[currentLayer].Dig(amount);
+        LayersScript[currentLayer].Dig(amount * digMultiplyer);
 
         /*mineProgress += amount;
         bonusDrop += amount;
@@ -209,5 +209,15 @@ public class Shaft : MonoBehaviour
                 dropsWeigths[3]++;
             }
         }
+    }
+
+    public void BuyClickUpgrade()
+    {
+        digPower += 1f;
+    }
+
+    public void BuyDigUpgrade()
+    {
+        digMultiplyer += 0.02f;
     }
 }

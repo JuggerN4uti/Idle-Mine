@@ -5,6 +5,7 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     public BlockLibrary BLib;
+    public TextSpawner TextSpawnerScript;
     public SpriteRenderer ItsSprite;
     public Sprite[] StateSprites;
     public Layer ItsLayer;
@@ -18,6 +19,7 @@ public class Block : MonoBehaviour
     public void Dig(float amount)
     {
         toughness -= amount;
+        TextSpawnerScript.PopUpText(amount);
         if (toughness <= 0f)
             Dug();
     }
