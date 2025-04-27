@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Shaft : MonoBehaviour
 {
     [Header("Scripts")]
+    public Drill DrillScript;
     public Resources ResourcesScript;
     public Miners MinersScript;
     public Layer[] LayersScript;
@@ -45,7 +46,7 @@ public class Shaft : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             if (powerDigs > 0)
             {
@@ -56,7 +57,7 @@ public class Shaft : MonoBehaviour
                 PowerDigsText.text = powerDigs.ToString("");
             }
             else Dig(digPower);
-        }
+        }*/
     }
 
     void GatherPower()
@@ -213,7 +214,9 @@ public class Shaft : MonoBehaviour
 
     public void BuyClickUpgrade()
     {
-        digPower += 1f;
+        DrillScript.maxFuel += 10f;
+        DrillScript.drillPower += 1.1f;
+        //digPower += 1f;
     }
 
     public void BuyDigUpgrade()
