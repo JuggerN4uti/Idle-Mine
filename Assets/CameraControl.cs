@@ -7,6 +7,7 @@ public class CameraControl : MonoBehaviour
     public Transform CameraTransform;
     public GameObject GrassTileMap;
     public float[] yLimits;
+    public float movementSpeed;
 
     public void Update()
     {
@@ -19,8 +20,8 @@ public class CameraControl : MonoBehaviour
     void Move(bool up)
     {
         if (up)
-            CameraTransform.position += new Vector3(0f, 2f * Time.deltaTime, 0f);
-        else CameraTransform.position += new Vector3(0f, -2f * Time.deltaTime, 0f);
+            CameraTransform.position += new Vector3(0f, movementSpeed * Time.deltaTime, 0f);
+        else CameraTransform.position += new Vector3(0f, -movementSpeed * Time.deltaTime, 0f);
 
         if (CameraTransform.position.y >= -0.15f)
             GrassTileMap.SetActive(true);

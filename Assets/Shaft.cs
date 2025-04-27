@@ -28,6 +28,7 @@ public class Shaft : MonoBehaviour
     public GameObject[] LevelObject;
     public float[] levelProgress, levelDurability;
     public Image[] LevelProgressBar;
+    public TextSpawner[] TextSpawnerScript;
 
     [Header("Drops")]
     int dropsAmount;
@@ -38,6 +39,7 @@ public class Shaft : MonoBehaviour
     [Header("UI")]
     public RectTransform MineshaftForm;
     public Image ProgressBar;
+    public TMPro.TextMeshProUGUI DepthReachedText;
 
     void Start()
     {
@@ -91,9 +93,20 @@ public class Shaft : MonoBehaviour
         ProgressBar.fillAmount = mineProgress / wallDurability;*/
     }
 
-    public void DigLevel(float amount, int level)
+    public void LayerDug()
     {
+        currentLayer++;
+        DepthReachedText.text = currentLayer.ToString("0") + "m";
+        if (currentLayer % 20 == 0)
+            UnlockLevel();
+    }
+
+    public void MineOre(float amount, int level)
+    {
+        amount *= digMultiplyer;
         levelProgress[level] += amount;
+        TextSpawnerScript[level].PopUpText(amount);
+
         if (levelProgress[level] >= levelDurability[level])
         {
             OreDug(level);
@@ -215,12 +228,12 @@ public class Shaft : MonoBehaviour
     public void BuyClickUpgrade()
     {
         DrillScript.maxFuel += 10f;
-        DrillScript.drillPower += 1.1f;
+        DrillScript.drillPower += DrillScript.powerPerUpgrade;
         //digPower += 1f;
     }
 
     public void BuyDigUpgrade()
     {
-        digMultiplyer += 0.02f;
+        digMultiplyer += 0.025f;
     }
 }

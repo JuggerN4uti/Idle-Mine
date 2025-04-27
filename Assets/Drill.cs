@@ -15,6 +15,7 @@ public class Drill : MonoBehaviour
 
     [Header("Drill Stats")]
     public float drillPower;
+    public float powerPerUpgrade;
 
     void Start()
     {

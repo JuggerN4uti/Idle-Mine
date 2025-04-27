@@ -64,7 +64,7 @@ public class Miners : MonoBehaviour
         if (MinersLocation[miner] == 0)
             ShaftScript.Dig(MLib.Miners[MinersEquipped[miner]].digPower * 1.55f);
         else
-            ShaftScript.DigLevel(MLib.Miners[MinersEquipped[miner]].digPower, MinersLocation[miner] - 1);
+            ShaftScript.MineOre(MLib.Miners[MinersEquipped[miner]].digPower, MinersLocation[miner] - 1);
     }
 
     public void OpenEgg()
