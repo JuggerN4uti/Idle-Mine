@@ -80,6 +80,18 @@ PrefabInstance:
       propertyPath: StateSprites.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: 53dcb273357917942bcc9ad0bf0f6996, type: 3}
+    - target: {fileID: 2233043367577266089, guid: a2ec213e8ca5d59479e864333785fc5b, type: 3}
+      propertyPath: StateSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 53dcb273357917942bcc9ad0bf0f6996, type: 3}
+    - target: {fileID: 2233043367577266089, guid: a2ec213e8ca5d59479e864333785fc5b, type: 3}
+      propertyPath: StateSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 53dcb273357917942bcc9ad0bf0f6996, type: 3}
+    - target: {fileID: 2233043367577266089, guid: a2ec213e8ca5d59479e864333785fc5b, type: 3}
+      propertyPath: StateSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 53dcb273357917942bcc9ad0bf0f6996, type: 3}
     - target: {fileID: 3985888370646026590, guid: a2ec213e8ca5d59479e864333785fc5b, type: 3}
       propertyPath: m_Sprite
       value: 

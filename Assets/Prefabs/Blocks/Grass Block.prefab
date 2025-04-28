@@ -105,6 +105,9 @@ MonoBehaviour:
   ItsSprite: {fileID: 939276538994527453}
   StateSprites:
   - {fileID: 21300000, guid: cc72efd515ef68843b16813295459f67, type: 3}
+  - {fileID: 21300000, guid: 903c97c29207d064cbb951fbfa9bdd73, type: 3}
+  - {fileID: 21300000, guid: 286131b3cc628a14396a7c62e512d275, type: 3}
+  - {fileID: 21300000, guid: 836eb99551ce7a44b88f916cd9b8c534, type: 3}
   ItsLayer: {fileID: 0}
   toughness: 10
   eggChance: 1.5
