@@ -109,11 +109,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 286131b3cc628a14396a7c62e512d275, type: 3}
   - {fileID: 21300000, guid: 836eb99551ce7a44b88f916cd9b8c534, type: 3}
   ItsLayer: {fileID: 0}
-  toughness: 10
-  eggChance: 1.5
+  toughness: 11.75
+  max: 0
+  eggChance: 1.6
   dropsList: 0
   goldMin: 1
-  goldMax: 1
+  goldMax: 2
   resourceID: 
   dropMin: 
   dropMax: 

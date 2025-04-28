@@ -234,6 +234,6 @@ public class Shaft : MonoBehaviour
 
     public void BuyDigUpgrade()
     {
-        digMultiplyer += 0.025f;
+        digMultiplyer += 0.02f;
     }
 }

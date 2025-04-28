@@ -27,10 +27,10 @@ public class Resources : MonoBehaviour
         Text[id].text = resource[id].ToString("");
     }
 
-    public void SellResources(int id)
+    public void SpendResources(int id, int amount)
     {
-        GainGold(resource[id] * resourcesWorth[id]);
-        resource[id] = 0;
+        //GainGold(resource[id] * resourcesWorth[id]);
+        resource[id] -= amount;
         Text[id].text = resource[id].ToString("");
     }
 

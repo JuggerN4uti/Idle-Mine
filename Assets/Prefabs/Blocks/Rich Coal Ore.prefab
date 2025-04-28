@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4360350496966169477, guid: 628f39693ced1594c82537bee97fee81, type: 3}
       propertyPath: toughness
-      value: 116
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 4360350496966169477, guid: 628f39693ced1594c82537bee97fee81, type: 3}
       propertyPath: dropMax.Array.data[0]

@@ -9,11 +9,13 @@ public class Miners : MonoBehaviour
     public Shaft ShaftScript;
     public Resources ResourcesScript;
     public MinersLibrary MLib;
+    public Tavern TavernScript;
 
     [Header("Miners")]
     public int[] MinersInBase;
     public int[] MinersEquipped, MinersLocation;
     public bool[] SlotTaken;
+    public GameObject[] MinersObject;
     public TMPro.TextMeshProUGUI[] MinersLocationText;
     public int MinersMaxSlots, SlotsTaken;
     public Image[] EquippedMinerSprite;
@@ -55,7 +57,9 @@ public class Miners : MonoBehaviour
                 StartCoroutine(Dig(i, i * 0.075f));
             //Dig(i);
         }
-        Invoke("AutoDig", 0.75f);
+        if (TavernScript.beer > 0f)
+            Invoke("AutoDig", 0.75f / TavernScript.diggingSpeedMultiplyer);
+        else Invoke("AutoDig", 0.75f);
     }
 
     IEnumerator Dig(int miner, float timer)
@@ -246,5 +250,11 @@ public class Miners : MonoBehaviour
         if (totalLuck >= Random.Range(0f, 100f + totalLuck))
             return true;
         else return false;
+    }
+
+    public void IncreaseSlots()
+    {
+        MinersObject[MinersMaxSlots].SetActive(true);
+        MinersMaxSlots++;
     }
 }
